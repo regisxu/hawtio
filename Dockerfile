@@ -1,5 +1,5 @@
-FROM java:8-jre-alpine
+FROM java:8-jdk-alpine
 
 RUN wget http://central.maven.org/maven2/io/hawt/hawtio-app/2.0.2/hawtio-app-2.0.2.jar
 
-CMD java -jar hawtio-app-*.jar
+CMD java "-Dhawtio.proxyWhitelist=*" -jar hawtio-app-2.0.2.jar
